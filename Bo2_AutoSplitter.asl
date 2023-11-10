@@ -66,12 +66,12 @@ gameTime{
     if(current.gameTicks > old.gameTicks){
         //Game ticks are in ms
         //Removing some time from the total gameTicks since gameTicks start before we can even move
-        vars.totalTime = ((current.gameTicks-vars.timeToRemoveForRealStartTime)/1000);
+        vars.totalTime = (current.gameTicks-vars.timeToRemoveForRealStartTime);
     }
     if(current.gameTicks == 0){
         vars.totalTime = 0;
     }
-    return TimeSpan.FromSeconds(vars.totalTime);
+    return TimeSpan.FromMilliseconds(vars.totalTime);
 }
 
 split
